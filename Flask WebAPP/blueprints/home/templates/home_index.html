@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Model Emotion and Age Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('home.static', filename='style.css')}}">
+
+    <!--Box icon links-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--Remix icon links-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <!--Google Fonts link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Namdhinggo:wght@400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <script src="{{ url_for('home.static', filename='particles.js') }}"></script>
+    <script src="{{ url_for('home.static', filename='app.js') }}"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <header>
+        <a href="/home" class="logo">
+            <img src="{{ url_for('home.static', filename='logo.png') }}" alt="Logo">
+        </a>
+
+        <ul class="navlist">
+            <li><a href="/expression-age">EXPRESSION & AGE-GENDER</a></li>
+            <li><a href="/speech">SPEECH</a></li>
+        </ul>
+
+        <div class="right-content">
+        </div>
+    </header>
+
+    <!--Hero-->
+    <section class="hero">
+
+        <div class="hero-text">
+            <h1>Real-Time Multimodal Emotion and Age Predictor</h1>
+            <p>"Where AI meets emotions, feelings, predicting age and gender in real-time for a truly personalized experience....."</p>
+            
+            <label class="dropdown">
+
+                <div class="dd-button">
+                  Try Now
+                </div>
+              
+                <input type="checkbox" class="dd-input" id="test">
+              
+                <ul class="dd-menu">
+                    <li class="dropdown-list">
+                        <a class="dropdown-link" href="/expression-age">Expression & Age-Gender</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="dropdown-list">
+                        <a class="dropdown-link" href="/speech">Speech</a>
+                    </li>
+                </ul>
+                
+              </label>
+        </div>
+
+        <div class="hero-img">
+            <img alt="Image" src="{{ url_for('home.static', filename='hero-image.png') }}">
+        </div>
+
+    </section>
+
+</body>
+</html>

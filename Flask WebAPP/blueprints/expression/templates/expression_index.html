@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expression & Age</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('expression.static', filename='style.css') }}">
+
+    <script src="{{ url_for('expression.static', filename='particles.js') }}"></script>
+    <script src="{{ url_for('expression.static', filename='app.js') }}"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <header>
+        <a href="/home" class="logo">
+            <img src="{{ url_for('expression.static', filename='logo.png') }}" alt="Logo">
+        </a>
+
+
+        <ul class="navlist">
+            <li><a href="/home">HOME</a></li>
+            <li><a href="/expression-age">EXPRESSION & AGE-GENDER</a></li>
+            <li><a href="/speech">SPEECH</a></li>
+        </ul>
+
+        <div class="right-content">
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="body-container">
+            <h4 class="text-center mt-3">Real-Time Emotion & Age Prediction from Expressions</h4>
+
+            <!-- Webcam Display -->
+            <div class="video-container text-center mt-3">
+                <img id="video">
+            </div>            
+
+            <!-- Control Buttons -->
+            <div class="text-center mt-3">
+                <button id="startButton" class="btn btn-success">Start Webcam</button>
+                <button id="stopButton" class="btn btn-danger" disabled>Stop Webcam</button>
+            </div>
+
+            <!-- Emotion and Age Prediction Result -->
+            <div class="text-center mt-3 mb-4">
+                <h5>Predicted Emotion: <span id="emotionResult">N/A</span></h5>
+                <h5>Predicted Age & Gender: <span id="ageResult">N/A</span></h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="div-footer">
+        <p class="footer-text">© 2024 Real-Time Multi-Model Emotion and Age Predictor</p>
+    </div>
+
+    <script src="{{ url_for('expression.static', filename='script.js') }}"></script>
+
+</body>
+</html>

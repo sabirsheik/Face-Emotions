@@ -1,0 +1,12 @@
+Flask
+opencv-python
+numpy
+keras
+tensorflow
+librosa
+sounddevice
+scipy
+matplotlib
+seaborn
+scikit-learn
+imblearn 

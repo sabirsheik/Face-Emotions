@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('speech.static', filename='style.css') }}">
+
+    <script src="{{ url_for('speech.static', filename='particles.js') }}"></script>
+    <script src="{{ url_for('speech.static', filename='app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/4.2.0/wavesurfer.min.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <header>
+        <a href="/home" class="logo">
+            <img src="{{ url_for('speech.static', filename='logo.png') }}" alt="Logo">
+        </a>
+
+        <ul class="navlist">
+            <li><a href="/home">HOME</a></li>
+            <li><a href="/expression-age">EXPRESSION & AGE-GENDER</a></li>
+            <li><a href="/speech">SPEECH</a></li>
+        </ul>
+
+        <div class="right-content">
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="body-container">
+            <h4 class="text-center mt-3">Real-Time Emotion Prediction from Speech</h4>
+
+            <!-- Waveform Display -->
+             <div class="waveform-container text-center mt-3">
+                <div id="waveform"></div>
+            </div>
+            
+
+            <!-- Control Buttons -->
+            <div class="text-center mt-3">
+                <button id="start" class="btn btn-success">Start Recording</button>
+                <button id="stop" class="btn btn-danger" disabled>Stop Recording</button>
+            </div>
+
+            <!-- Status and Emotion Prediction Result -->
+            <div class="text-center mt-3 mb-4">
+                <h4>Status: <span id="recordingStatus">Idle</span></h4>
+                <h4>Detected Emotion: <span id="predictionResult">N/A</span></h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="div-footer">
+        <p class="footer-text">© 2024 Real-Time Multi-Model Emotion and Age Predictor</p>
+    </div>
+
+    <script>
+        const audioFilePath = "{{ url_for('speech.static', filename='temp_audio.wav') }}";
+    </script>
+    <script src="{{ url_for('speech.static', filename='script.js') }}"></script>
+</body>
+</html>
